@@ -41,7 +41,7 @@ jobs:
           key: feed-cache-${{ steps.generate-key.outputs.cache-key }}
           restore-keys: feed-cache-
       - name: GitHub
-        uses: 'selfagency/MastoRSSbot@v1'
+        uses: 'rich-howell/MastoRSSbot@v1'
         with:
           # This is the RSS feed you want to publish
           rss-feed: https://www.githubstatus.com/history.rss
