@@ -1,8 +1,8 @@
-# Mastofeedbot
+# MastoRSSbot
 
-Mastofeedbot is a bot that posts RSS feeds to Mastodon via GitHub Actions.
+MastoRSSbot is a bot that posts RSS feeds to Mastodon via GitHub Actions.
 
-This is based off the Mastofeedbot by [selfagency](https://github.com/selfagency/mastofeedbot) with some small tweaks.
+This is based off the MastoRSSbot by [selfagency](https://github.com/selfagency/MastoRSSbot) with some small tweaks.
 
 ## Usage
 
@@ -16,7 +16,7 @@ This is based off the Mastofeedbot by [selfagency](https://github.com/selfagency
 2. Create a new GitHub repository.
 3. Go to your repository settings at `https://github.com/${YOUR_REPO}/settings/secrets/actions/new`, and add a new
    secret with the value of the access token.
-4. Add a file named `.github/workflows/mastofeedbot.yml` with the following content:
+4. Add a file named `.github/workflows/MastoRSSbot.yml` with the following content:
 
 ```yaml
 name: FeedBot
@@ -37,11 +37,11 @@ jobs:
       - name: Retrieve cache
         uses: actions/cache@v3
         with:
-          path: ${{ github.workspace }}/mastofeedbot
+          path: ${{ github.workspace }}/MastoRSSbot
           key: feed-cache-${{ steps.generate-key.outputs.cache-key }}
           restore-keys: feed-cache-
       - name: GitHub
-        uses: 'selfagency/mastofeedbot@v1'
+        uses: 'selfagency/MastoRSSbot@v1'
         with:
           # This is the RSS feed you want to publish
           rss-feed: https://www.githubstatus.com/history.rss
@@ -50,7 +50,7 @@ jobs:
           # This is the secret you created earlier
           api-token: ${{ secrets.MASTODON_ACCESS_TOKEN }}
           # This is a path to the cache file, using the above cache path
-          cache-file: ${{ github.workspace }}/mastofeedbot/cache.json
+          cache-file: ${{ github.workspace }}/MastoRSSbot/cache.json
 ```
 
 5. Commit and publish your changes.

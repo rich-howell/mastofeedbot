@@ -1,4 +1,4 @@
-name: 'MastoFeedBot'
+name: 'MastoRSSbot'
 author: 'rich-howell'
 description: 'Push RSS feed updates to Mastodon via GitHub Actions'
 branding:
