@@ -2,6 +2,8 @@
 
 Mastofeedbot is a bot that posts RSS feeds to Mastodon via GitHub Actions.
 
+This is based off the Mastofeedbot by [selfagency](https://github.com/selfagency/mastofeedbot) with some small tweaks.
+
 ## Usage
 
 1. Go to `https://${YOUR_INSTANCE}/settings/applications/new` and add a new application.
